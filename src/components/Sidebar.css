@@ -1,4 +1,4 @@
-.sidebar {
+sidebar {
   width: 250px;
   height: 100vh;
   background-color: #f0f0f0;
@@ -57,7 +57,7 @@ nav ul li a:hover {
 .social-links {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 10px; /* Reduced gap between icons */
   justify-content: center;
   align-items: center;
   margin-top: 20px;

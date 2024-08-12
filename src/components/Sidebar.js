@@ -1,16 +1,31 @@
-import profilePic from './KalePicture.PNG'; // Correctly import the image
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import profilePic from './KalePicture.PNG';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import resume from './KaleKimmelResume2024.pdf';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // Initialize darkMode state based on user's preference saved in localStorage
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark';
+  });
+
+  useEffect(() => {
+    // Apply the saved theme on initial load
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.body.classList.toggle('dark-mode', newDarkMode);
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
   };
 
   return (
@@ -21,9 +36,9 @@ const Sidebar = () => {
       </div>
       <nav>
         <ul>
-          <li><Link to="/about">About</Link></li> {/* Adjust label as needed */}
+          <li><Link to="/about">About</Link></li>
           <li><a href={resume} target="_blank" rel="noopener noreferrer">Resume</a></li>
-          <li><Link to="/projects">Projects</Link></li> {/* Ensure this path matches your App.js routes */}
+          <li><Link to="/projects">Projects</Link></li>
         </ul>
       </nav>
       <div className="social-links">

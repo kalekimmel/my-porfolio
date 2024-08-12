@@ -5,97 +5,130 @@
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
     background-color: #f5f5f5;
-    overflow: hidden;
-  }
-  
-  .about-me-header,
-  .about-me-text,
-  .recent-projects-header {
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  
-  .header-container {
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-container {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .header-container h2 {
-    margin-right: 15px; /* Space between the text and animation */
-  }
-  
-  .dancing-person {
-    width: 70px; /* Increase the size of the animation */
-    height: 70px;
-  }
-  
-  .about-me-text {
-    max-width: 600px;
-    margin-top: 20px;
-  }
-  
-  .recent-projects {
-    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.typed-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #444;
+}
+
+.dancing-person {
+    width: 80px;
+    height: 80px;
+}
+
+.about-me-text {
+    max-width: 800px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.recent-projects {
+    margin-top: 60px;
     width: 100%;
-  }
-  
-  .recent-projects-header {
+}
+
+.recent-projects h3 {
+    font-size: 2rem;
     margin-bottom: 30px;
-  }
-  
-  .project-list {
+    color: #444;
+}
+
+.project-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  
-  .project-item {
+    gap: 20px;
+}
+
+.project-item {
     display: flex;
     align-items: center;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
-    text-align: left;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-item img {
-    width: 150px; /* Fixed width */
-    height: 150px; /* Fixed height */
-    border-radius: 8px;
-    object-fit: cover; /* Ensures the image covers the area with proper scaling */
-    margin-right: 20px; /* Space between the image and the text */
-  }
-  
-  .project-details {
-    flex: 1; /* Make the text container take up the remaining space */
-  }
-  
-  .project-item h4 {
-    font-size: 22px;
+}
+
+.project-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.project-details {
+    flex: 1;
+}
+
+.project-details h4 {
+    font-size: 1.6rem;
     margin-bottom: 10px;
     color: #444;
-  }
-  
-  .project-item p {
-    font-size: 16px;
+}
+
+.project-details p {
+    font-size: 1rem;
     color: #666;
-    margin: 0;
-  }
-  
-  .project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-item h4,
-  .project-item p {
-    margin: 0;
-  }
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .about-me {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark-mode .header-container {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark-mode .typed-text {
+    color: #ffffff;
+}
+
+body.dark-mode .about-me-text {
+    color: #ffffff;
+}
+
+body.dark-mode .recent-projects h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .project-item {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode .project-details h4 {
+    color: #000000;
+}
+
+body.dark-mode .project-details p {
+    color: #000000;
+}

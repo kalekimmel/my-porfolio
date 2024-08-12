@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from 'lottie-react';
 import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
+import {ReactTyped as Typed} from 'react-typed';
 import dancingPersonAnimation from './Animation.json';
 import './About.css';
 import basketballPic from './basketball.png'; 
@@ -17,11 +18,18 @@ const About = () => {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className="about-me-header"
           >
             <div className="header-container">
-              <h2>About Me</h2>
+              <Typed
+                strings={["About Me"]}
+                typeSpeed={60}
+                backSpeed={30}
+                showCursor={false}
+                loop={false}
+                className="typed-text"
+              />
               <div className="dancing-person">
                 <Lottie animationData={dancingPersonAnimation} loop={true} />
               </div>
@@ -35,14 +43,16 @@ const About = () => {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             className="about-me-text"
           >
             <p>
               I'm Kale Kimmel, a rising senior at UW-Madison with a strong passion for development. My professional experience includes internships at Kapco Metal Stamping, Guardian Life Insurance, and Entegral, where I focused on enhancing user experiences through sleek, scalable, and user-friendly designs.
             </p>
             <p>
-              Beyond my work, I’m an avid sports enthusiast with a deep love for the Milwaukee Bucks and Green Bay Packers. I recently achieved a long-held college goal by winning an intramural basketball championship and the coveted shirt that comes with it.
+            Beyond my work, I’m an avid sports enthusiast with a deep love for the Milwaukee Bucks and Green Bay Packers. I recently achieved a long-held college goal by winning an intramural basketball championship and proudly wear the coveted shirt that comes with it.
+
+
             </p>
             <p>
               Feel free to reach out, whether it's to discuss professional opportunities or to chat about sports—I'm always up for both.
@@ -56,7 +66,7 @@ const About = () => {
             ref={ref}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
             className="recent-projects"
           >
             <h3>Recent Projects</h3>
@@ -67,8 +77,10 @@ const About = () => {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
                 className="project-item"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src={basketballPic} alt="NBA Machine Learning Model" />
                 <div className="project-details">
@@ -82,8 +94,10 @@ const About = () => {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: 0.8, ease: 'easeOut' }}
                 className="project-item"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src={rateMySchoolPic} alt="Rate My School" />
                 <div className="project-details">
@@ -97,8 +111,10 @@ const About = () => {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 0.5, delay: 1, ease: 'easeOut' }}
                 className="project-item"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src={foodForThoughtPic} alt="Food for Thought" />
                 <div className="project-details">

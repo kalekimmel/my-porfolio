@@ -1,7 +1,6 @@
-
 import profilePic from './KalePicture.PNG'; // Correctly import the image
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import resume from './KaleKimmelResume2024.pdf'
+import resume from './KaleKimmelResume2024.pdf';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
@@ -22,9 +21,9 @@ const Sidebar = () => {
       </div>
       <nav>
         <ul>
-          <li><Link to="/about">Home</Link></li>
-          <li><a href={resume} target="_blank" rel="noopener noreferrer">Resume</a></li>          
-          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/about">About</Link></li> {/* Adjust label as needed */}
+          <li><a href={resume} target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><Link to="/projects">Projects</Link></li> {/* Ensure this path matches your App.js routes */}
         </ul>
       </nav>
       <div className="social-links">

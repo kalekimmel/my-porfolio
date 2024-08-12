@@ -1,14 +1,24 @@
-import React from 'react';
+
+import profilePic from './KalePicture.PNG'; // Correctly import the image
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Sidebar.css'; // Create this CSS file for styling
+import './Sidebar.css';
 
 const Sidebar = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
+
   return (
     <div className="sidebar">
       <div className="profile">
-        <img src="your-profile-pic-url" alt="Kale Kimmel" />
+        <img src={profilePic} alt="Kale Kimmel" />
         <h2>Kale Kimmel</h2>
-        <p>Highly Caffeinated</p>
       </div>
       <nav>
         <ul>
@@ -19,9 +29,18 @@ const Sidebar = () => {
         </ul>
       </nav>
       <div className="social-links">
-        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:kimmelk11@gmail.com">Email</a>
+        <a href="https://github.com/kalekimmel" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kale-kimmel" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:kimmelk11@gmail.com">
+          <i className="fas fa-envelope"></i>
+        </a>
+        <button onClick={toggleDarkMode} className="toggle-theme">
+          <i className={darkMode ? 'fas fa-sun' : 'fas fa-moon'}></i>
+        </button>
       </div>
     </div>
   );
